@@ -46,6 +46,7 @@ button:hover {
   padding: 1%;
 }
 
+/* Remove control task */
 .fas.fa-times {
   font-size: 20px;
   transition: 0.5s ease;
@@ -59,10 +60,20 @@ button:hover {
   transition: 0.5s ease;
 }
 
+/* Check control task */
 .fas.fa-check {
   align-self: center;
+  transition: 0.5s ease;
 }
 
+.fas.fa-check:hover {
+  cursor: pointer;
+  color: green;
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+
+/* Vue CSS transition bounce tasks added and removed */
 .bounce-enter-active {
   animation: bounce-in 0.5s;
 }

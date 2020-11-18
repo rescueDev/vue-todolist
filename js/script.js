@@ -18,9 +18,17 @@ var app = new Vue({
   },
   methods: {
     addTasks() {
-      this.tasks.push(this.dato);
-      console.log(this.tasks);
-      this.dato = ""; //ripulisco ad ogni aggiunta l'input
+      if (this.dato == " " || this.tasks.includes(this.dato)) {
+        alert("Task not valid");
+      } else {
+        this.tasks.push(this.dato);
+        // this.dato = " ";
+      }
+      /* if (this.dato !== " " && !this.tasks.includes(this.dato)) {
+        this.tasks.push(this.dato);
+      } else {
+        alert("Task not valid");
+      } */
     },
     removeTask(index) {
       this.$delete(this.tasks, index); //cancello il singolo elemento dell'array legandolo al suo indice per eliminare quello cliccato
