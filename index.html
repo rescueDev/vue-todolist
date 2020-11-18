@@ -17,8 +17,9 @@
         <button v-on:click="removeTasks" type="button">Rimuovi</button>
       </form>
       <!-- Input task da aggiugere-->
-      <span> dato inserito: {{dato}} </span>
-      <div>Added Tasks: {{ tasks }}</div>
+      <div v-for="(item, index) in tasks" :key="index">
+        Added Tasks: {{ tasks[index] }}
+      </div>
       <!-- Contenitore tasks -->
       <div class="tasks-container">
         <div v-for="(item, index) in tasks" ::key="index"></div>
