@@ -9,7 +9,21 @@
     <title>To DO list Vue</title>
   </head>
   <body>
-    <div id="app" class="container"></div>
+    <div id="root" class="container">
+      <form>
+        <input v-model="dato" placeholder="add new task" />
+        <!-- Bottone aggiungi -->
+        <button v-on:click="addTasks" type="button">Aggiungi</button>
+        <button v-on:click="removeTasks" type="button">Rimuovi</button>
+      </form>
+      <!-- Input task da aggiugere-->
+      <span> dato inserito: {{dato}} </span>
+      <div>Added Tasks: {{ tasks }}</div>
+      <!-- Contenitore tasks -->
+      <div class="tasks-container">
+        <div v-for="(item, index) in tasks" ::key="index"></div>
+      </div>
+    </div>
     <script src="js/script.js" type="text/javascript"></script>
   </body>
 </html>
