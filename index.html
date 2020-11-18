@@ -10,21 +10,27 @@
   </head>
   <body>
     <div id="root" class="container">
-      <form>
-        <input v-model="dato" placeholder="add new task" />
+      <!-- per evitare che si aggiorni la pagina con form metto @submit.prevent -->
+      <form @submit.prevent action="">
+        <input
+          v-model="dato"
+          v-on:keyup.enter="addTasks()"
+          placeholder="add new task"
+          type="text"
+        />
+
         <!-- Bottone aggiungi -->
         <button v-on:click="addTasks" type="button">Aggiungi</button>
-        <button type="button">Rimuovi tutto</button>
+
+        <!-- Bottone rimuovi -->
+        <button v-on:click="cleanAll" type="button">Rimuovi tutto</button>
       </form>
-      <!-- Input task da aggiugere-->
+
+      <!-- Contenitore con task da aggiugere o rimuovere-->
       <div v-for="(item, index) in tasks" :key="index">
         <div v-on:click="removeTask(index)">
           Added Tasks: {{ tasks[index] }}
         </div>
-      </div>
-      <!-- Contenitore tasks -->
-      <div class="tasks-container">
-        <div v-for="(item, index) in tasks" ::key="index"></div>
       </div>
     </div>
     <script src="js/script.js" type="text/javascript"></script>
