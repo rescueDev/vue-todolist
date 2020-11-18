@@ -14,11 +14,13 @@
         <input v-model="dato" placeholder="add new task" />
         <!-- Bottone aggiungi -->
         <button v-on:click="addTasks" type="button">Aggiungi</button>
-        <button v-on:click="removeTasks" type="button">Rimuovi</button>
+        <button type="button">Rimuovi tutto</button>
       </form>
       <!-- Input task da aggiugere-->
       <div v-for="(item, index) in tasks" :key="index">
-        Added Tasks: {{ tasks[index] }}
+        <div v-on:click="removeTask(index)">
+          Added Tasks: {{ tasks[index] }}
+        </div>
       </div>
       <!-- Contenitore tasks -->
       <div class="tasks-container">
