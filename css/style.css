@@ -1,3 +1,4 @@
+/* regole generali */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,6 +6,7 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* stile immagine logo */
 #logo-img {
   display: flex;
   justify-content: center;
@@ -71,6 +73,11 @@ button:hover {
   color: green;
   transform: scale(1.1);
   transition: 0.5s ease;
+}
+
+.checked {
+  background-color: green;
+  color: white;
 }
 
 /* Vue CSS transition bounce tasks added and removed */

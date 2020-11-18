@@ -15,7 +15,9 @@ var app = new Vue({
     datoIndex: 0,
     logo:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRKnpYyR8hFiQxks8xMFBVKF8bYUauu_OZvg&usqp=CAU",
+    clicked: false,
   },
+
   methods: {
     addTasks() {
       if (this.dato === "" || this.tasks.includes(this.dato)) {
