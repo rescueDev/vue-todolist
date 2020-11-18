@@ -10,7 +10,7 @@
 var app = new Vue({
   el: "#root",
   data: {
-    dato: " ",
+    dato: "",
     tasks: [],
     datoIndex: 0,
     logo:
@@ -18,12 +18,13 @@ var app = new Vue({
   },
   methods: {
     addTasks() {
-      if (this.dato == " " || this.tasks.includes(this.dato)) {
-        alert("Task not valid");
+      if (this.dato === "" || this.tasks.includes(this.dato)) {
+        console.log("err");
+        alert("task già inserito o non valido");
       } else {
         this.tasks.push(this.dato);
-        // this.dato = " ";
       }
+      this.dato = ""; //ripulisco ad ogni aggiunta l'input
       /* if (this.dato !== " " && !this.tasks.includes(this.dato)) {
         this.tasks.push(this.dato);
       } else {
