@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Vue 2 script -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>To DO list Vue</title>
   </head>
   <body>
     <div id="root" class="container">
       <!-- per evitare che si aggiorni la pagina con form metto @submit.prevent -->
+      <div id="logo-img">
+        <img v-bind:src="logo" alt="logo todo" />
+      </div>
       <form @submit.prevent action="">
         <input
           v-model="dato"
@@ -27,9 +37,10 @@
       </form>
 
       <!-- Contenitore con task da aggiugere o rimuovere-->
-      <div v-for="(item, index) in tasks" :key="index">
-        <div v-on:click="removeTask(index)">
-          Added Tasks: {{ tasks[index] }}
+      <div class="tasks" v-for="(item, index) in tasks" :key="index">
+        <div class="single-task">
+          <h2>{{ tasks[index] }}</h2>
+          <i class="fas fa-times" v-on:click="removeTask(index)"></i>
         </div>
       </div>
     </div>

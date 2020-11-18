@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#logo-img {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  font-size: medium;
+  min-height: 50px;
+  width: 20%;
+  padding: 0 5%;
+}
+
+button {
+  padding: 10px;
+  font-size: medium;
+}
+
+.tasks {
+  margin: 1%;
+  display: flex;
+  justify-content: center;
+}
+
+.single-task {
+  text-align: center;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.fas.fa-times {
+  font-size: 20px;
+  transition: 0.5s ease;
+  align-self: center;
+}
+
+.fas.fa-times:hover {
+  color: red;
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
