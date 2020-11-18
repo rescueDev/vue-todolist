@@ -36,13 +36,18 @@
         <button v-on:click="cleanAll" type="button">Rimuovi tutto</button>
       </form>
 
-      <!-- Contenitore con task da aggiugere o rimuovere-->
-      <div class="tasks" v-for="(item, index) in tasks" :key="index">
-        <div class="single-task">
-          <h2>{{ tasks[index] }}</h2>
-          <i class="fas fa-times" v-on:click="removeTask(index)"></i>
+      <transition-group name="bounce">
+        <!-- Contenitore con task da aggiugere o rimuovere-->
+        <div class="tasks" v-for="(item, index) in tasks" :key="index">
+          <div class="single-task">
+            <h2>{{ tasks[index] }}</h2>
+            <div class="command-task">
+              <i class="fas fa-check" v-on:click="completeTask(index)"></i>
+              <i class="fas fa-times" v-on:click="removeTask(index)"></i>
+            </div>
+          </div>
         </div>
-      </div>
+      </transition-group>
     </div>
     <script src="js/script.js" type="text/javascript"></script>
   </body>
