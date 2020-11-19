@@ -19,10 +19,11 @@
     <div id="root" class="container">
       <!-- per evitare che si aggiorni la pagina con form metto @submit.prevent -->
       <div id="logo-img">
-        <img v-bind:src="logo" alt="logo todo" />
+        <img id="dark-img" v-bind:src="logo" alt="logo todo" />
       </div>
       <form @submit.prevent action="">
         <input
+          id="add-task"
           class="add-task"
           v-model="dato"
           v-on:keyup.enter="addTasks()"
@@ -39,7 +40,7 @@
 
       <div id="toggle-dark">
         <input type="checkbox" class="checkbox" id="checkbox" />
-        <label for="checkbox" class="label">
+        <label id="label" for="checkbox" class="label">
           <i class="fas fa-moon"></i>
           <i class="fas fa-sun"></i>
           <div class="ball"></div>
