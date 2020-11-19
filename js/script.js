@@ -41,3 +41,11 @@ var app = new Vue({
     },
   },
 });
+
+//BONUS Dark Theme Toggle JS
+
+const checkbox = document.getElementById("checkbox");
+
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark");
+});

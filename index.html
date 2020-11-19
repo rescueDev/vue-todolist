@@ -23,6 +23,7 @@
       </div>
       <form @submit.prevent action="">
         <input
+          class="add-task"
           v-model="dato"
           v-on:keyup.enter="addTasks()"
           placeholder="add new task"
@@ -35,6 +36,15 @@
         <!-- Bottone rimuovi -->
         <button v-on:click="cleanAll" type="button">Rimuovi tutto</button>
       </form>
+
+      <div id="toggle-dark">
+        <input type="checkbox" class="checkbox" id="checkbox" />
+        <label for="checkbox" class="label">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+          <div class="ball"></div>
+        </label>
+      </div>
 
       <transition-group name="bounce">
         <!-- Contenitore con task da aggiugere o rimuovere-->
