@@ -135,6 +135,7 @@ button:hover {
 .checkbox {
   opacity: 0;
   position: absolute;
+  transition: 0.5s ease;
 }
 
 .checkbox:checked + .label .ball {
