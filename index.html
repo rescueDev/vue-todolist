@@ -53,7 +53,6 @@
           <div class="single-task" :class="{ checked: clicked }">
             <h2>{{ tasks[index] }}</h2>
             <div class="command-task">
-              <i class="fas fa-check" @click="clicked = !clicked"></i>
               <i class="fas fa-times" v-on:click="removeTask(index)"></i>
             </div>
           </div>

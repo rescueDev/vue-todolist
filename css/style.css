@@ -20,17 +20,25 @@ form {
 .add-task {
   font-size: medium;
   min-height: 50px;
-  width: 20%;
+  width: 30%;
   padding: 0 5%;
+  border: 2px solid slategray;
 }
 
 button {
+  margin: 0 0.5%;
   padding: 10px;
-  font-size: medium;
+  font-size: normal;
+  font-weight: bold;
+  color: whitesmoke;
+  background-color: slategrey;
+  transition: 0.5s ease;
 }
 
 button:hover {
   cursor: pointer;
+  background-color: rgb(151, 165, 165);
+  transition: 0.5s ease;
 }
 
 .tasks {
@@ -62,24 +70,6 @@ button:hover {
   color: red;
   transform: scale(1.1);
   transition: 0.5s ease;
-}
-
-/* Check control task */
-.fas.fa-check {
-  align-self: center;
-  transition: 0.5s ease;
-}
-
-.fas.fa-check:hover {
-  cursor: pointer;
-  color: green;
-  transform: scale(1.1);
-  transition: 0.5s ease;
-}
-
-.checked {
-  background-color: green;
-  color: white;
 }
 
 /* Vue CSS transition bounce tasks added and removed */
@@ -121,6 +111,10 @@ button:hover {
   position: relative;
 }
 
+.label:hover {
+  cursor: pointer;
+}
+
 .ball {
   width: 20px;
   height: 20px;
@@ -149,7 +143,11 @@ button:hover {
 
 .dark {
   background-color: black;
-  color: white;
+}
+
+.dark-input {
+  background-color: rgb(59, 61, 63);
+  color: whitesmoke;
 }
 
 .imgdrk {

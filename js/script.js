@@ -48,7 +48,7 @@ const checkbox = document.getElementById("checkbox");
 
 checkbox.addEventListener("change", () => {
   document.body.classList.toggle("dark");
-  document.getElementById("add-task").classList.toggle("dark");
+  document.getElementById("add-task").classList.toggle("dark-input");
   document.getElementById("dark-img").classList.toggle("imgdrk");
   document.getElementById("label").classList.toggle("light");
 });
