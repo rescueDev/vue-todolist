@@ -15,7 +15,7 @@ var app = new Vue({
     datoIndex: 0,
     logo:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRKnpYyR8hFiQxks8xMFBVKF8bYUauu_OZvg&usqp=CAU",
-    clicked: false,
+    darkMode: false,
   },
 
   methods: {
@@ -39,16 +39,19 @@ var app = new Vue({
     cleanAll() {
       this.tasks.splice(this.dato); //rimuovo tutti i task con bottone
     },
+    toggleDarkMode() {
+      this.darkMode = !this.darkMode;
+    },
   },
 });
 
 //BONUS Dark Theme Toggle JS
 
-const checkbox = document.getElementById("checkbox");
+/* const checkbox = document.getElementById("checkbox");
 
 checkbox.addEventListener("change", () => {
   document.body.classList.toggle("dark");
   document.getElementById("add-task").classList.toggle("dark-input");
   document.getElementById("dark-img").classList.toggle("imgdrk");
   document.getElementById("label").classList.toggle("light");
-});
+}); */

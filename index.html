@@ -16,15 +16,25 @@
     <title>To DO list Vue</title>
   </head>
   <body>
-    <div id="root" class="container">
+    <div
+      id="root"
+      class="container"
+      :class="( darkMode === true) ? 'dark' : ''"
+    >
       <!-- per evitare che si aggiorni la pagina con form metto @submit.prevent -->
       <div id="logo-img">
-        <img id="dark-img" v-bind:src="logo" alt="logo todo" />
+        <img
+          :class="(darkMode === true) ? 'imgdrk' : '' "
+          id="dark-img"
+          v-bind:src="logo"
+          alt="logo todo"
+        />
       </div>
       <form @submit.prevent action="">
         <input
           id="add-task"
           class="add-task"
+          :class="(darkMode === true) ? 'dark-input': ''"
           v-model="dato"
           v-on:keyup.enter="addTasks()"
           placeholder="add new task"
@@ -39,8 +49,18 @@
       </form>
 
       <div id="toggle-dark">
-        <input type="checkbox" class="checkbox" id="checkbox" />
-        <label id="label" for="checkbox" class="label">
+        <input
+          type="checkbox"
+          class="checkbox"
+          id="checkbox"
+          @change="toggleDarkMode()"
+        />
+        <label
+          id="label"
+          for="checkbox"
+          class="label"
+          :class="(darkMode === true) ? 'light' : ''"
+        >
           <i class="fas fa-moon"></i>
           <i class="fas fa-sun"></i>
           <div class="ball"></div>
@@ -50,7 +70,10 @@
       <transition-group name="bounce">
         <!-- Contenitore con task da aggiugere o rimuovere-->
         <div class="tasks" v-for="(item, index) in tasks" :key="index">
-          <div class="single-task" :class="{ checked: clicked }">
+          <div
+            class="single-task"
+            :class="(darkMode === true) ? 'single-task-dark' : ''"
+          >
             <h2>{{ tasks[index] }}</h2>
             <div class="command-task">
               <i class="fas fa-times" v-on:click="removeTask(index)"></i>

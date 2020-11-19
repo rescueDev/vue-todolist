@@ -6,6 +6,12 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#root {
+  width: 100%;
+  min-height: 100vh;
+  border: 1px solid black;
+}
+
 /* stile immagine logo */
 #logo-img {
   display: flex;
@@ -156,4 +162,9 @@ button:hover {
 
 .light {
   background-color: slategray;
+}
+
+.single-task-dark {
+  background-color: slategray;
+  color: black;
 }
