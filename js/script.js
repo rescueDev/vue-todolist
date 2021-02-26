@@ -18,6 +18,16 @@ var app = new Vue({
     darkMode: false,
   },
 
+  mounted() {
+    if (localStorage.getItem("tasks")) {
+      try {
+        this.tasks = JSON.parse(localStorage.getItem("tasks"));
+      } catch (e) {
+        localStorage.removeItem("tasks");
+      }
+    }
+  },
+
   methods: {
     addTasks() {
       if (this.dato === "" || this.tasks.includes(this.dato)) {
@@ -26,6 +36,8 @@ var app = new Vue({
       } else {
         this.tasks.push(this.dato);
       }
+      this.saveTasks();
+
       this.dato = ""; //ripulisco ad ogni aggiunta l'input
       /* if (this.dato !== " " && !this.tasks.includes(this.dato)) {
         this.tasks.push(this.dato);
@@ -35,23 +47,18 @@ var app = new Vue({
     },
     removeTask(index) {
       this.$delete(this.tasks, index); //cancello il singolo elemento dell'array legandolo al suo indice per eliminare quello cliccato
+      this.saveTasks();
     },
     cleanAll() {
       this.tasks.splice(this.dato); //rimuovo tutti i task con bottone
+      this.saveTasks();
+    },
+    saveTasks() {
+      let parsed = JSON.stringify(this.tasks);
+      localStorage.setItem("tasks", parsed);
     },
     toggleDarkMode() {
       this.darkMode = !this.darkMode;
     },
   },
 });
-
-//BONUS Dark Theme Toggle JS
-
-/* const checkbox = document.getElementById("checkbox");
-
-checkbox.addEventListener("change", () => {
-  document.body.classList.toggle("dark");
-  document.getElementById("add-task").classList.toggle("dark-input");
-  document.getElementById("dark-img").classList.toggle("imgdrk");
-  document.getElementById("label").classList.toggle("light");
-}); */
