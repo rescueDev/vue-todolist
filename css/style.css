@@ -6,6 +6,10 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+input:focus {
+  outline: none;
+}
+
 #root {
   width: 100%;
   min-height: 100vh;
